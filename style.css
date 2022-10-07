@@ -73,3 +73,10 @@
 #addTaskModalSubmit{
     margin-top: 10px;
 }
+.taskBlock {
+    background-color: #677DB7;
+    max-width: 200px;
+    margin-top: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+}
