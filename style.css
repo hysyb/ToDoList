@@ -37,6 +37,33 @@
     grid-template-columns: 1fr 4fr;
     overflow: hidden;
 }
+.hide {
+    display: none !important;
+}
+.addTaskModal{
+    background-color: rgba(10,10,10,0.7);
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+#addTaskModalForm {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+    padding: 25px;
+
+
+}
 /*
 .topBar{
     width: 100%;

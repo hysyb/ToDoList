@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Dooey</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <div class="topBar">
@@ -17,8 +18,18 @@
         </div>
         <div class="content">
             <button id="addTaskBtn">Add a task</button>
-            <div> wtff</div>
+            <div class="taskGrid"></div>
         </div>
+    </div>
+    <div class="addTaskModal hide" id = 'addTaskModal'>
+        <form id = 'addTaskModalForm'>
+            <input type="text" id = 'taskName'>
+            <input type="text" id = 'taskDesc'>
+            <input type="text" id = 'taskDueDate'>
+            <input type="text" id = 'taskPriority'>
+            <input type="text" id = 'taskNotes'>
+        <button id = 'addTaskModalSubmit'>Submit</button>
+        </form>
     </div>
 </body>
 </html>
