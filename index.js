@@ -1,6 +1,7 @@
 let taskBtn = document.getElementById('addTaskBtn');
 let taskModalBtn = document.getElementById('addTaskModalBtn');
 let taskModal = document.getElementById('addTaskModal');
+
 let taskModalSubmitBtn = document.getElementById('addTaskModalSubmit')
 let taskName = document.getElementById('taskName');
 let taskDesc = document.getElementById('taskDesc');
@@ -8,6 +9,10 @@ let taskDue = document.getElementById('taskDueDate');
 let taskPriority = document.getElementById('taskPriority');
 let taskNotes = document.getElementById('taskNotes');
 let taskGrid = document.querySelector('.taskGrid');
+
+let toDoInbox = new Map();
+let inboxMapIndex = 0;
+
 taskBtn.addEventListener('click', addTask);
 taskModalSubmitBtn.addEventListener('click',taskModalSubmit)
 
@@ -19,6 +24,8 @@ class Task {
         this.priority = priority;
         this.notes = notes;
     }
+
+
 
 }
 function addTask(){
@@ -33,7 +40,6 @@ function makeTask(){
     let task = new Task();
     
     task.name = taskName.value;
-    console.log(task.name);
     task.desc = taskDesc.value;
     task.Due = taskDue.value;
     task.priority = taskPriority.value;
@@ -42,6 +48,7 @@ function makeTask(){
     taskBlock.classList.add('taskBlock');
     taskBlock.innerHTML = task.name + ":<br>Description<br>" + task.desc + "<br>Due Date:<br>" + task.Due + "<br>Priority:<br>" + task.priority + "<br>Notes:<br>" + task.notes;
     taskGrid.appendChild(taskBlock);
-    
+    toDoInbox.set(inboxMapIndex, task);
+    console.log(toDoInbox.get(0));2
 }
 
