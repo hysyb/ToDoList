@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Signika', sans-serif;
 }
 :root {
-    --main-color: #677DB7;
-    --background-color: white; 
+    --main-color: rgb(135,204,125);
+    --background-color: rgb(174,204,125); 
+    --block-color:rgb(204,194,125);
     --text-color: black;
 }
 .topBar {
@@ -12,9 +16,9 @@
     height: 50px;
     background-color: var(--main-color);
     text-align: center;
-    padding-top: 25px;
-    font-size: 24px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 25px;
+    font-size: 38px;
+    font-family: 'Signika', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--text-color);
 }
 .leftBar {
@@ -24,7 +28,7 @@
     background-color: var(--background-color);
     padding-left: 10vh;
     gap: 30px;
-    font-size: 18px;
+    font-size: 24px;
     height: 100vh;
     padding-top: 10vh;
 }
@@ -76,10 +80,25 @@
 #addTaskModalSubmit{
     margin-top: 10px;
 }
+#addTaskBtn{
+    width: 150px;
+    padding: 15px;
+    font-size: 24px;
+}
 .taskBlock {
-    background-color: var(--main-color);
+    background-color: whitesmoke;
     max-width: 200px;
+    font-size: 18px;
     margin-top: 15px;
     padding: 15px;
     border-radius: 15px;
+    min-width: 20%;
+}
+.taskGrid{
+    display: flex;
+    gap: 15px;
+}
+.taskBlockName{
+    text-align: center;
+    font-size: 22px;
 }

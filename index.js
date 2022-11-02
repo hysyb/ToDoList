@@ -46,9 +46,9 @@ function makeTask(){
     task.notes = taskNotes.value;
     let taskBlock = document.createElement('div');
     taskBlock.classList.add('taskBlock');
-    taskBlock.innerHTML = task.name + ":<br>Description<br>" + task.desc + "<br>Due Date:<br>" + task.Due + "<br>Priority:<br>" + task.priority + "<br>Notes:<br>" + task.notes;
+    taskBlock.innerHTML ="<div class = 'taskBlockName'>"+ task.name + "</div><br>Description: <br>" + task.desc + "<br>Due Date:<br>" + task.Due + "<br>Priority:<br>" + task.priority + "<br>Notes:<br>" + task.notes;
     taskGrid.appendChild(taskBlock);
     toDoInbox.set(inboxMapIndex, task);
-    console.log(toDoInbox.get(0));2
+    console.log(toDoInbox.get(0));
 }
 
