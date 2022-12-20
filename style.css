@@ -32,7 +32,10 @@
     height: 100vh;
     padding-top: 10vh;
 }
-
+.leftBar>span{
+    padding-top:30px;
+    text-align: center;
+}
 .content {
     background-color: var(--background-color);
     padding-top: 10vh;
@@ -101,4 +104,11 @@
 .taskBlockName{
     text-align: center;
     font-size: 22px;
+}
+.active{
+    width: 200px;
+    height:60px;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: var(--main-color);
 }
