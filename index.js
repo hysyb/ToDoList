@@ -1,7 +1,9 @@
 let taskBtn = document.getElementById('addTaskBtn');
 let taskModalBtn = document.getElementById('addTaskModalBtn');
 let taskModal = document.getElementById('addTaskModal');
-
+let inboxBtn = document.getElementById('inbox');
+let todayBtn = document.getElementById('today');
+let projectsBtn = document.getElementById('projects');
 let taskModalSubmitBtn = document.getElementById('addTaskModalSubmit')
 let taskName = document.getElementById('taskName');
 let taskDesc = document.getElementById('taskDesc');
@@ -12,9 +14,13 @@ let taskGrid = document.querySelector('.taskGrid');
 
 let toDoInbox = new Map();
 let inboxMapIndex = 0;
+let leftBarBtns = [inboxBtn,todayBtn,projectsBtn];
 
 taskBtn.addEventListener('click', addTask);
 taskModalSubmitBtn.addEventListener('click',taskModalSubmit)
+inboxBtn.addEventListener('click',(e) => handleLeftBarBtn(e));
+todayBtn.addEventListener('click',(e) => handleLeftBarBtn(e));
+projectsBtn.addEventListener('click',(e) => handleLeftBarBtn(e));
 
 class Task {
     constructor(name, desc, dueDate, priority, notes){
@@ -24,10 +30,20 @@ class Task {
         this.priority = priority;
         this.notes = notes;
     }
-
+   
 
 
 }
+function handleLeftBarBtn(e){
+    console.log(inboxBtn.id);
+    console.log(e.target.id);
+    console.log(e.target);
+    setLeftBarActiveBtn(e.target.id);
+}
+function setLeftBarActiveBtn(btn){
+ //   clearLeftBarActiveBtns();
+}
+
 function addTask(){
     taskModal.classList.remove('hide');
 }
@@ -38,7 +54,6 @@ function taskModalSubmit(){
 }
 function makeTask(){
     let task = new Task();
-    
     task.name = taskName.value;
     task.desc = taskDesc.value;
     task.Due = taskDue.value;
