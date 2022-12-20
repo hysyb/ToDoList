@@ -35,6 +35,11 @@
 .leftBar>span{
     padding-top:30px;
     text-align: center;
+    width: 200px;
+    height:60px;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: var(--background-color);
 }
 .content {
     background-color: var(--background-color);
@@ -110,5 +115,5 @@
     height:60px;
     border: 2px solid black;
     border-radius: 25px;
-    background-color: var(--main-color);
+    background-color: var(--main-color)!important;
 }
