@@ -7,8 +7,8 @@
 }
 :root {
     --main-color: rgb(135,204,125);
-    --background-color: rgb(174,204,125); 
-    --block-color:rgb(204,194,125);
+    --background-color: rgb(151, 151, 151); 
+    --block-color:rgb(205, 203, 203);
     --text-color: black;
 }
 .topBar {
@@ -39,7 +39,7 @@
     height:60px;
     border: 2px solid black;
     border-radius: 25px;
-    background-color: var(--background-color);
+    background-color: var(--block-color);
 }
 .content {
     background-color: var(--background-color);
@@ -89,12 +89,14 @@
     margin-top: 10px;
 }
 #addTaskBtn{
+    background-color:var(--block-color);
+    border-radius: 8px;
     width: 150px;
     padding: 15px;
     font-size: 24px;
 }
 .taskBlock {
-    background-color: whitesmoke;
+    background-color: var(--block-color);
     max-width: 200px;
     font-size: 18px;
     margin-top: 15px;
@@ -103,7 +105,8 @@
     min-width: 20%;
 }
 .taskGrid{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
 }
 .taskBlockName{
