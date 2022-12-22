@@ -12,17 +12,28 @@ let taskDue = document.getElementById('taskDueDate');
 let taskPriority = document.getElementById('taskPriority');
 let taskNotes = document.getElementById('taskNotes');
 let taskGrid = document.querySelector('.taskGrid');
+
 //Global Vars
-let toDoInbox = new Map();
+let toDoInbox = [];
 let inboxMapIndex = 0;
 let leftBarBtns = [inboxBtn,todayBtn,projectsBtn];
-let activeBtn = leftBarBtns[0];
+let activeBtn = leftBarBtns[0]; //to track which array to put the Task objects
+let inboxItems = [];
+let todayItems = [];
+let projectItems = [];
+var arrObj = {
+    inboxBtn:inboxItems,
+    taskBtn:todayItems,
+    projectsBtn:projectItems
+};
+
 //Event Listeners
 taskBtn.addEventListener('click', addTask);
 taskModalSubmitBtn.addEventListener('click',taskModalSubmit)
 inboxBtn.addEventListener('click',(e) => handleLeftBarBtn(e));
 todayBtn.addEventListener('click',(e) => handleLeftBarBtn(e));
 projectsBtn.addEventListener('click',(e) => handleLeftBarBtn(e));
+
 //Object to hold Indivdual to do items
 class Task {
     constructor(name, desc, dueDate, priority, notes){
@@ -64,11 +75,20 @@ function makeTask(){
     task.Due = taskDue.value;
     task.priority = taskPriority.value;
     task.notes = taskNotes.value;
+    drawTask(task);
+    toDoInbox.push(task);
+}
+
+function drawTask(task){
     let taskBlock = document.createElement('div');
     taskBlock.classList.add('taskBlock');
     taskBlock.innerHTML ="<div class = 'taskBlockName'>"+ task.name + "</div><br>Description: <br>" + task.desc + "<br>Due Date:<br>" + task.Due + "<br>Priority:<br>" + task.priority + "<br>Notes:<br>" + task.notes;
     taskGrid.appendChild(taskBlock);
-    toDoInbox.set(inboxMapIndex, task);
-    console.log(toDoInbox.get(0));
+}
+
+function populateTasks(array){
+    for (i=0;i<array.length;i++){
+       drawTask[array[i]];
+    }
 }
 
