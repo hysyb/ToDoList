@@ -88,7 +88,10 @@ function drawTask(task){
 
 function populateTasks(array){
     for (i=0;i<array.length;i++){
-       drawTask[array[i]];
+        let taskBlock = document.createElement('div');
+        taskBlock.classList.add('taskBlock');
+        taskBlock.innerHTML ="<div class = 'taskBlockName'>"+ array[i].name + "</div><br>Description: <br>" + array[i].desc + "<br>Due Date:<br>" + array[i].Due + "<br>Priority:<br>" + array[i].priority + "<br>Notes:<br>" + array[i].notes;
+        taskGrid.appendChild(taskBlock);
     }
 }
 
