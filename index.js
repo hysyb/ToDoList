@@ -14,18 +14,15 @@ let taskNotes = document.getElementById('taskNotes');
 let taskGrid = document.querySelector('.taskGrid');
 
 //Global Vars
-let toDoInbox = [];
 let inboxMapIndex = 0;
 let leftBarBtns = [inboxBtn,todayBtn,projectsBtn];
-let activeBtn = leftBarBtns[0]; //to track which array to put the Task objects
+
 let inboxItems = [];
 let todayItems = [];
 let projectItems = [];
-var arrObj = {
-    inboxBtn:inboxItems,
-    taskBtn:todayItems,
-    projectsBtn:projectItems
-};
+var arrObj = [inboxItems,todayItems,projectItems];
+let arrayIndex = 0;
+let activeBtn = inboxBtn; //to track which array to put the Task objects
 
 //Event Listeners
 taskBtn.addEventListener('click', addTask);
@@ -49,6 +46,8 @@ class Task {
 }
 function handleLeftBarBtn(e){
     setLeftBarActiveBtn(e.target.id);
+    clearContent();
+    populateTasks(arrObj[arrayIndex]);
 }
 function setLeftBarActiveBtn(btn){
  for (i=0;i<leftBarBtns.length;i++){
@@ -56,8 +55,12 @@ function setLeftBarActiveBtn(btn){
     if (leftBarBtns[i].id==btn){
         leftBarBtns[i].classList.add('active');
         activeBtn = leftBarBtns[i];
+        arrayIndex = i;
     }
  }
+}
+function clearContent(){
+    taskGrid.innerHTML = '';
 }
 
 function addTask(){
@@ -76,7 +79,7 @@ function makeTask(){
     task.priority = taskPriority.value;
     task.notes = taskNotes.value;
     drawTask(task);
-    toDoInbox.push(task);
+    arrObj[arrayIndex].push(task);
 }
 
 function drawTask(task){
